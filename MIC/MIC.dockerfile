@@ -33,7 +33,9 @@ COPY requirements.txt /root/.
 RUN python3.8 -m pip install \
         -r /root/requirements.txt \
         -f https://download.pytorch.org/whl/torch_stable.html && \
-    python3.8 -m pip install mmcv-full==1.3.7
+    python3.8 -m pip install mmcv-full==1.3.7 && \
+    python3.8 -m pip install -U openmim && \
+    mim install mmengine
 
 WORKDIR /workspace
 
